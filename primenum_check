@@ -1,0 +1,32 @@
+def check_prime1(n):
+    if n == 1:
+        return False 
+    i = 2 #iterator 
+    while ((i * i)<= n):
+        if n%i == 0:
+            print(i)
+            return False
+        i += 1
+    return True
+
+print(check_prime1(2))
+
+
+def check_prime(n):
+    if n == 1:
+        return False 
+    if n % 2 == 0 and n % 3 == 0:
+        if n == 3 or n == 2:
+            return True
+        return False
+    
+    # anomaly factors of the number is check here 
+    i = 5 #iterator 
+    while ((i * i)<= n):
+        if n%i == 0 or n%(i+2) == 0:
+            return False
+        i += 6
+    return True
+
+
+
