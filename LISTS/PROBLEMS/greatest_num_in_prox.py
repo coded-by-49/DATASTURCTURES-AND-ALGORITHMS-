@@ -9,4 +9,12 @@ class Solution:
         result = -1 
         for i in arr:
             if i>x:
-                # to be continued
+                if (result == -1):
+                    result = i # first element that is greater x
+                if result > i:
+                    result = i # change element if there is another element that is greater than x but less than i
+        return result
+    
+
+example = Solution()
+example.immediateGreater([4,67,13,12,15],5,16 )
