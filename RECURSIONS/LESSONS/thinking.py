@@ -1,8 +1,12 @@
-def fibonacci(self,n):
-        if n == 0:
-            return 0
-        if n == 1:
-            return 1
-        else:
+def dup(lst: list) -> bool:
+    for item in lst:
+        counter = 1
+        for i in range(lst.index(item)+1,len(lst)):
+            if item == lst[i]:
+                counter += 1
+            if counter == 2:
+                return True
+    return False
             
-            return self.fibonacci(n-1)+self.fibonacci(n-2)
+
+print(dup([1,2,3,4]))
