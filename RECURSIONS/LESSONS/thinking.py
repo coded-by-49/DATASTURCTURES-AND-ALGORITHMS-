@@ -9,4 +9,15 @@ def dup(lst: list) -> bool:
     return False
             
 
-print(dup([1,2,3,4]))
+#effecient method m
+
+def dup(lst: list) -> bool:
+    checked_set = set() # we want to store any number we have checked here 
+    for i in lst:
+        if i in checked_set:
+            return True
+        #but if is already in checked_set, which doesn't accept duplicates 
+        checked_set.add(i)
+    return False
+
+print(dup([2,3]))
