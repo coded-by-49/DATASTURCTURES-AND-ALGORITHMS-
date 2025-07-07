@@ -1,6 +1,19 @@
 def rotate(nums:list, k: int):
-        nums = nums[k+1:]+nums[:k+1]
+        n = len(nums)
+        temp = [0]*n
+        # just incase k is greater n
+        k = k%n
+
+        for i in range(k,n):
+            temp[i-k] = nums[i]
+            print(temp)
+        
+        for i in range(k):
+            temp[n-k+i] = nums[i]
+
+        nums = temp
         return nums
+print(rotate([1,2,3,4,5],2))
 
 def rotate_array(nums:list[int], k : int):
     #rotate the whole array
@@ -23,5 +36,3 @@ def rotate_array(nums:list[int], k : int):
         start += 1
     return nums
 
-
-print(rotate_array([1,2,3,4,5,6,7,8],4))
